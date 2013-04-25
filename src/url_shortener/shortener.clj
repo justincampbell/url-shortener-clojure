@@ -1,7 +1,7 @@
 (ns url-shortener.shortener)
 
 (def id-generator
-  (atom 1))
+  (atom 0))
 
 (def urls
   (atom {}))
