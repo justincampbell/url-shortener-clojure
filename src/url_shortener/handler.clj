@@ -12,9 +12,11 @@
        (redirect "https://github.com/justincampbell/language-exploration"))
 
   (GET "/shorten" [url]
-       (let [token (shorten url)
-             path (str "/" token)]
-         {:status 201 :body path}))
+       (if url
+         (let [token (shorten url)
+               path (str "/" token)]
+           {:status 201 :body path})
+         {:status 400}))
 
   (GET "/:token" [token]
        (let [full-url (expand token)]

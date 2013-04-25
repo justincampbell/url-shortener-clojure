@@ -16,7 +16,11 @@
     (let [url "http://justincampbell.me"
           response (app (request :get (str "/shorten?url=" url)))]
       (is (= (:status response) 201))
-      (is (= (:body response) "/1"))))
+      (is (= (:body response) "/1")))
+
+    (testing "with no url"
+      (let [response (app (request :get "/shorten"))]
+        (is (= (:status response) 400)))))
 
   (testing "/:token"
     (let [url "http://justincampbell.me"
