@@ -3,6 +3,7 @@
   :url "https://github.com/justincampbell/url-shortener-clojure"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [compojure "1.1.5"]]
   :plugins [[lein-ring "0.8.3"]]
