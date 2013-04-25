@@ -6,7 +6,7 @@
 (def urls
   (atom {}))
 
-(def next-id
+(defn next-id []
   (swap! id-generator inc))
 
 (defn store [token url]
@@ -17,7 +17,7 @@
 
 (defn shorten [url]
   "Shortens a URL, and stores and returns the token"
-  (let [token (tokenize next-id)]
+  (let [token (tokenize (next-id))]
     (store token url)
     token))
 
