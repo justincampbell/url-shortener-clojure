@@ -2,7 +2,7 @@
   (:require [clojure.test :refer :all]
             [url-shortener.shortener :refer :all]))
 
-(deftest shortener
+(deftest url-shortener-test
   (testing "shortens and expands a URL"
     (let [url "https://justincampbell.me"
           token (shorten url)
